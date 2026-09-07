@@ -19,6 +19,12 @@ let mouse = {
 
 let score = 0;
 
+let level = 1;
+
+let xp = 0;
+
+let xpToLevel = 100;
+
 let maxHealth = 100;
 
 let health = maxHealth;
@@ -641,7 +647,13 @@ player.y - d.y
 
 );
 
+if(distance < 120){
 
+d.x += (player.x - d.x) * 0.05;
+
+d.y += (player.y - d.y) * 0.05;
+
+}
 
 if(distance < player.size + d.size){
 
@@ -746,6 +758,35 @@ type:type,
 size:12
 
 });
+
+}
+
+function gainXP(amount){
+
+
+xp += amount;
+
+
+if(xp >= xpToLevel){
+
+
+level++;
+
+
+xp = 0;
+
+
+xpToLevel += 50;
+
+
+console.log(
+
+"LEVEL UP! Level " + level
+
+);
+
+
+}
 
 
 }
@@ -1115,6 +1156,8 @@ coins += 100;
 score++;
 
 coins += 10;
+
+gainXP(20);
 
 killStreak++;
 
