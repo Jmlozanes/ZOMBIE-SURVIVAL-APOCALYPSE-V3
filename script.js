@@ -653,6 +653,20 @@ coins += 5;
 }
 
 
+if(d.type === "health"){
+
+health += 25;
+
+
+if(health > maxHealth){
+
+health = maxHealth;
+
+}
+
+}
+
+
 drops.splice(index,1);
 
 
@@ -1073,6 +1087,20 @@ zombie.y,
 );
 
 }
+
+if(Math.random() < 0.1){
+
+createDrop(
+
+zombie.x,
+
+zombie.y,
+
+"health"
+
+);
+
+}
     
 if(zombie.type === "boss"){
 
@@ -1383,6 +1411,10 @@ drops.forEach(d=>{
 if(d.type === "coin"){
 
 ctx.fillStyle="yellow";
+
+}else if(d.type === "health"){
+
+ctx.fillStyle="lime";
 
 }else{
 
