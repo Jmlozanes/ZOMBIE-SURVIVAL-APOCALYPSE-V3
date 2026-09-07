@@ -25,6 +25,10 @@ let xp = 0;
 
 let xpToLevel = 100;
 
+let levelUp = false;
+
+let upgradeChoices = [];
+
 let maxHealth = 100;
 
 let health = maxHealth;
@@ -763,31 +767,29 @@ size:12
 
 function gainXP(amount){
 
-
 xp += amount;
-
 
 if(xp >= xpToLevel){
 
-
 level++;
-
 
 xp = 0;
 
-
 xpToLevel += 50;
 
+levelUp = true;
 
-console.log(
+upgradeChoices = [
 
-"LEVEL UP! Level " + level
+"Damage +5",
 
-);
+"Speed +1",
 
+"Fire Rate +10%"
+
+];
 
 }
-
 
 }
 
@@ -1719,6 +1721,56 @@ ctx.fillText(
 
 }
 
+// LEVEL UP MENU
+
+if(levelUp){
+
+ctx.fillStyle="rgba(0,0,0,0.8)";
+
+ctx.fillRect(
+
+100,
+
+100,
+
+canvas.width-200,
+
+300
+
+);
+
+ctx.fillStyle="white";
+
+ctx.font="30px Arial";
+
+ctx.fillText(
+
+"LEVEL UP!",
+
+canvas.width/2-80,
+
+160
+
+);
+
+ctx.font="20px Arial";
+
+upgradeChoices.forEach((u,index)=>{
+
+ctx.fillText(
+
+(index+1)+". "+u,
+
+180,
+
+220+(index*40)
+
+);
+
+});
+
+}
+    
 // RESET SHAKE
 
 ctx.setTransform(
@@ -1800,7 +1852,7 @@ function gameLoop(){
 
 if(gameRunning){
 
-if(!shopOpen){
+if(!shopOpen && !levelUp){
 
 movePlayer();
 
