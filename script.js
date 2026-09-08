@@ -5,7 +5,6 @@ const ctx = canvas.getContext("2d");
 // GAME VARIABLES
 // =======================
 
-
 let gameRunning = true;
 
 
