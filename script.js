@@ -398,6 +398,44 @@ window.addEventListener(
 
 let key = e.key.toLowerCase();
 
+if(levelUp){
+
+
+if(key === "1"){
+
+playerDamage += 5;
+
+levelUp = false;
+
+console.log("LEVEL UP CLOSED");
+
+}
+
+if(key === "2"){
+
+player.speed += 1;
+
+levelUp = false;
+
+}
+
+
+if(key === "3"){
+
+fireRate -= 50;
+
+levelUp = false;
+
+}
+
+
+upgradeChoices = [];
+
+
+return;
+
+}
+    
 if(key === " "){
 
 keys["space"] = false;
@@ -1158,8 +1196,6 @@ score++;
 
 coins += 10;
 
-gainXP(20);
-
 killStreak++;
 
 streakTimer = 180;
@@ -1169,6 +1205,9 @@ if(killStreak === 5){
 damageMultiplier = 1.5;
 
 }
+
+}
+
 
 zombies.splice(index,1);
 
