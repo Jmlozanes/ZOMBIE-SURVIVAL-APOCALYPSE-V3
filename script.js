@@ -393,6 +393,8 @@ shopOpen = !shopOpen;
 
 }
 
+if(!levelUp){
+
 if(key=="1"){
 
 buyUpgrade("1");
@@ -422,7 +424,9 @@ if(key=="5"){
 buyUpgrade("5");
 
 }
-    
+
+}
+
 });
 
 window.addEventListener(
