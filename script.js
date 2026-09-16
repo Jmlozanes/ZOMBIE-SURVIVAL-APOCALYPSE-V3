@@ -334,37 +334,32 @@ let key = e.key.toLowerCase();
 
 if(levelUp){
 
-
 if(key === "1"){
 
 playerDamage += 5;
 
 }
 
-
-if(key === "2"){
+else if(key === "2"){
 
 player.speed += 1;
 
 }
 
-
-if(key === "3"){
+else if(key === "3"){
 
 fireRate -= 50;
 
 }
 
-
 levelUp = false;
 
 upgradeChoices = [];
 
-
 return;
 
 }
-    
+
 if(key === " "){
 
 keys["space"] = true;
@@ -381,13 +376,7 @@ reload();
 
 }
 
-if(key=="r"){
-
-reload();
-
-}
-    
-if(key=="b"){
+if(key === "b"){
 
 shopOpen = !shopOpen;
 
@@ -395,31 +384,31 @@ shopOpen = !shopOpen;
 
 if(!levelUp){
 
-if(key=="1"){
+if(key === "1"){
 
 buyUpgrade("1");
 
 }
 
-if(key=="2"){
+if(key === "2"){
 
 buyUpgrade("2");
 
 }
 
-if(key=="3"){
+if(key === "3"){
 
 buyUpgrade("3");
 
 }
 
-if(key=="4"){
+if(key === "4"){
 
 buyUpgrade("4");
 
 }
 
-if(key=="5"){
+if(key === "5"){
 
 buyUpgrade("5");
 
